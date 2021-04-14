@@ -15,6 +15,7 @@
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
+                <outlet property="touchIDView" destination="Pp2-o1-Vxf" id="RRZ-2i-qLi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4dc-hJ-geg"/>
                 <outletCollection property="placeholders" destination="w14-Kb-Jnf" collectionClass="NSMutableArray" id="OYC-Bu-Hqb"/>
                 <outletCollection property="placeholders" destination="OSf-H5-f20" collectionClass="NSMutableArray" id="obm-Mr-bfV"/>
@@ -27,9 +28,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCJ-d2-fTI">
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCJ-d2-fTI">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cw9-HM-DYd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,19 +37,19 @@
                     <blurEffect style="dark"/>
                 </visualEffectView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
-                    <rect key="frame" x="188.5" y="267" width="37" height="23"/>
+                    <rect key="frame" x="188.5" y="252" width="37" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
-                    <rect key="frame" x="167.5" y="294" width="79" height="18"/>
+                    <rect key="frame" x="167.5" y="279" width="79" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="160" y="328" width="94" height="16"/>
+                    <rect key="frame" x="160" y="313" width="94" height="16"/>
                     <subviews>
                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -117,17 +117,21 @@
                         <constraint firstItem="w14-Kb-Jnf" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="00q-SK-ilE"/>
                         <constraint firstAttribute="height" constant="16" id="0rg-FM-kVz"/>
                         <constraint firstItem="9Tg-dE-gH4" firstAttribute="leading" secondItem="OSf-H5-f20" secondAttribute="trailing" constant="10" id="33P-aQ-rnf"/>
-                        <constraint firstItem="OSf-H5-f20" firstAttribute="top" secondItem="w14-Kb-Jnf" secondAttribute="top" id="6eg-Qv-82V"/>
+                        <constraint firstItem="OSf-H5-f20" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="6eg-Qv-82V"/>
                         <constraint firstAttribute="width" constant="94" id="8aU-sn-a0U"/>
                         <constraint firstItem="Fhs-1e-Ysl" firstAttribute="leading" secondItem="9Tg-dE-gH4" secondAttribute="trailing" constant="10" id="LwK-gY-EaT"/>
-                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="top" secondItem="OSf-H5-f20" secondAttribute="top" id="MnB-bE-r8B"/>
-                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="top" secondItem="9Tg-dE-gH4" secondAttribute="top" id="O8I-hs-q0Y"/>
+                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="MnB-bE-r8B"/>
+                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="O8I-hs-q0Y"/>
+                        <constraint firstAttribute="bottom" secondItem="w14-Kb-Jnf" secondAttribute="bottom" id="dTz-X1-beQ"/>
                         <constraint firstItem="OSf-H5-f20" firstAttribute="leading" secondItem="w14-Kb-Jnf" secondAttribute="trailing" constant="10" id="dde-Fn-Mzf"/>
+                        <constraint firstAttribute="bottom" secondItem="OSf-H5-f20" secondAttribute="bottom" id="eCe-OC-knd"/>
+                        <constraint firstAttribute="bottom" secondItem="Fhs-1e-Ysl" secondAttribute="bottom" id="fXh-nc-pJh"/>
+                        <constraint firstAttribute="bottom" secondItem="9Tg-dE-gH4" secondAttribute="bottom" id="g0D-pj-AWy"/>
                         <constraint firstItem="w14-Kb-Jnf" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="pkT-HZ-TAQ"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="107" y="368" width="60" height="60"/>
+                    <rect key="frame" x="92" y="353" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="1">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +156,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="368" width="60" height="60"/>
+                    <rect key="frame" x="172" y="353" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="2">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,7 +181,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="247" y="368" width="60" height="60"/>
+                    <rect key="frame" x="252" y="353" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="3">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,7 +206,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="107" y="438" width="60" height="60"/>
+                    <rect key="frame" x="92" y="433" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="4">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,7 +231,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="438" width="60" height="60"/>
+                    <rect key="frame" x="172" y="433" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="5">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,7 +256,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="247" y="438" width="60" height="60"/>
+                    <rect key="frame" x="252" y="433" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="6">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -277,7 +281,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="107" y="508" width="60" height="60"/>
+                    <rect key="frame" x="92" y="513" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="7">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -302,7 +306,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="508" width="60" height="60"/>
+                    <rect key="frame" x="172" y="513" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="8">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -327,7 +331,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="247" y="508" width="60" height="60"/>
+                    <rect key="frame" x="252" y="513" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="9">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,8 +355,8 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="aJD-gJ-Fvd"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="578" width="60" height="60"/>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="172" y="593" width="70" height="70"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal" title="0">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -377,7 +381,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                    <rect key="frame" x="109" y="595" width="56" height="26"/>
+                    <rect key="frame" x="99" y="615" width="56" height="26"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Cancel">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,7 +391,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                    <rect key="frame" x="250.5" y="595" width="53" height="26"/>
+                    <rect key="frame" x="260.5" y="615" width="53" height="26"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Delete">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -399,16 +403,24 @@
                         <action selector="deleteSignButtonTap:" destination="-1" eventType="touchUpInside" id="uXY-lj-GdX"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
-                    <rect key="frame" x="160" y="681" width="94" height="26"/>
+                <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
+                    <rect key="frame" x="172" y="693" width="70" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="B49-RK-82C"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                    <state key="normal" title="Use TouchID">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
                     <connections>
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pp2-o1-Vxf">
+                    <rect key="frame" x="172" y="692.5" width="70" height="70.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="6t6-RT-AKK"/>
+                        <constraint firstAttribute="height" constant="70" id="m1q-lu-D02"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -416,13 +428,16 @@
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="centerX" secondItem="PbJ-Y8-MMf" secondAttribute="centerX" id="16E-tM-5HY"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="1pk-a8-KUM"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="3Jc-aw-8VW"/>
+                <constraint firstItem="Pp2-o1-Vxf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3cd-uK-OiC"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4dI-MF-FB1"/>
+                <constraint firstItem="Pp2-o1-Vxf" firstAttribute="top" secondItem="0Ph-dj-v7R" secondAttribute="top" id="5QI-HG-ujw"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="leading" secondItem="CGh-ph-49t" secondAttribute="trailing" constant="10" id="6jk-5n-EC0"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="trailing" secondItem="CGh-ph-49t" secondAttribute="leading" constant="-10" id="6wf-5d-CCI"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerX" secondItem="cuq-ue-Jyj" secondAttribute="centerX" id="EsN-cG-KcQ"/>
+                <constraint firstItem="oCJ-d2-fTI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ExN-XZ-9Ew"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-4" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="43" id="Igz-PY-BtE"/>
+                <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MGx-oe-Y0Q"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="MLY-Mh-BhE"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-16" id="OLY-LF-tHd"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerX" secondItem="EUD-XB-0CR" secondAttribute="centerX" id="Ofc-zy-NxN"/>
@@ -435,16 +450,18 @@
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="STC-Oe-YVu"/>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="10" id="Sah-YV-A2O"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
+                <constraint firstItem="oCJ-d2-fTI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VNT-04-Lu7"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="10" id="Vo4-YP-n8O"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="XXL-dB-dNT"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="0CR-0R-0Nr" secondAttribute="centerX" id="YdB-U9-QpA"/>
+                <constraint firstItem="Pp2-o1-Vxf" firstAttribute="centerX" secondItem="oCJ-d2-fTI" secondAttribute="centerX" id="Y6g-ZT-G4X"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="top" secondItem="pLy-90-g1a" secondAttribute="bottom" constant="10" id="a7m-oE-Ygy"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="cof-By-lwn"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-10" id="diZ-Kj-1hU"/>
+                <constraint firstItem="oCJ-d2-fTI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gSn-GE-nai"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
+                <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="30" id="k07-z1-cCU"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="luj-6S-dgY"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="top" secondItem="RR4-5o-pli" secondAttribute="bottom" constant="10" id="mfW-ld-bDO"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="o0A-rK-1SQ"/>
@@ -457,19 +474,19 @@
     </objects>
     <designables>
         <designable name="0CR-0R-0Nr">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="9Tg-dE-gH4">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="C9Z-3u-ohd">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="CGh-ph-49t">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="EUD-XB-0CR">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="Fhs-1e-Ysl">
             <size key="intrinsicContentSize" width="16" height="16"/>
@@ -478,25 +495,28 @@
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="PbJ-Y8-MMf">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="RA8-jd-dag">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="RR4-5o-pli">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="WDx-aD-wJK">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="cuq-ue-Jyj">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="pLy-90-g1a">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
         <designable name="w14-Kb-Jnf">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
     </designables>
+    <resources>
+        <image name="touchid" catalog="system" width="128" height="122"/>
+    </resources>
 </document>

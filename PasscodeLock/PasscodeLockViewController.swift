@@ -34,6 +34,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @IBOutlet public weak var deleteSignButton: UIButton?
     @IBOutlet public weak var touchIDButton: UIButton?
     @IBOutlet public weak var placeholdersX: NSLayoutConstraint?
+    @IBOutlet public weak var touchIDView: UIImageView?
     
     public var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     public var dismissCompletionCallback: (()->Void)?
@@ -85,6 +86,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         deleteSignButton?.isEnabled = false
+        touchIDView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchIDViewTap)))
         
         setupEvents()
     }
@@ -151,6 +153,10 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     @IBAction func touchIDButtonTap(_ sender: UIButton) {
         
+//        passcodeLock.authenticateWithBiometrics()
+    }
+    
+    @objc func touchIDViewTap(_ sender: UITapGestureRecognizer) {
         passcodeLock.authenticateWithBiometrics()
     }
     

@@ -58,10 +58,12 @@ class PasscodeSettingsViewController: UIViewController {
         if passcodeSwitch.isOn {
             
             passcodeVC = PasscodeLockViewController(state: .SetPasscode, configuration: configuration)
+            passcodeVC.touchIDView?.isHidden = true
             
         } else {
             
             passcodeVC = PasscodeLockViewController(state: .RemovePasscode, configuration: configuration)
+            passcodeVC.touchIDView?.isHidden = false
             
             passcodeVC.successCallback = { lock in
                 
