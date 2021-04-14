@@ -68,7 +68,8 @@ class PasscodeSettingsViewController: UIViewController {
                 lock.repository.deletePasscode()
             }
         }
-        
+        passcodeVC.modalPresentationStyle = .overCurrentContext
+        passcodeVC.modalTransitionStyle = .crossDissolve
         present(passcodeVC, animated: true, completion: nil)
     }
     
