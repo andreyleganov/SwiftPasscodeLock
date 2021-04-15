@@ -8,7 +8,14 @@
 
 import UIKit
 
+public protocol PasscodeLockViewControllerDelegate: class {
+    
+    func passcodeLockViewController(_ viewController: PasscodeLockViewController, didSuccess: Bool)
+}
+
 public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
+    
+    public var vcDelegate: PasscodeLockViewControllerDelegate?
     
     public enum LockState {
         case EnterPasscode
@@ -248,6 +255,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         animatePlaceholders(placeholders: placeholders, toState: .Inactive)
         dismissPasscodeLock(lock: lock, completionHandler: { [weak self] in
             self?.successCallback?(lock)
+            self?.vcDelegate?.passcodeLockViewController(self!, didSuccess: true)
         })
     }
     
