@@ -52,13 +52,13 @@ public class PasscodeSignPlaceholderView: UIView {
     
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: 16, height: 16)
+        return CGSize(width: 12, height: 12)
 
     }
     
     private func setupView() {
         
-        layer.cornerRadius = 8
+        layer.cornerRadius = 6
         layer.borderColor = activeColor.cgColor
         backgroundColor = inactiveColor
     }

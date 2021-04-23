@@ -22,7 +22,7 @@ public class PasscodeSignButton: UIButton {
     }
     
     @IBInspectable
-    public var borderRadius: CGFloat = 35 {
+    public var borderRadius: CGFloat = 40 {
         didSet {
             setupView()
         }
@@ -51,7 +51,7 @@ public class PasscodeSignButton: UIButton {
     }
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: 70, height: 70)
+        return CGSize(width: 80, height: 80)
 
     }
     
@@ -59,7 +59,7 @@ public class PasscodeSignButton: UIButton {
     
     private func setupView() {
         
-        layer.borderWidth = 1
+        layer.borderWidth = 2
         layer.cornerRadius = borderRadius
         layer.borderColor = borderColor.cgColor
         
